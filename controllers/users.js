@@ -6,8 +6,7 @@ module.exports = {
     async registerUsers(req, res) {
         const {name, birthday, email, password} = req.body
         const hashedPassword = md5(req.body.password)
-        const ptBrDateFormat = req.body.birthday.split('-').reverse().join('/')
-        const users = new Users({_id:uuid(), name, birthday:ptBrDateFormat, email, password: hashedPassword})
+        const users = new Users({_id:uuid(), name, birthday, email, password: hashedPassword})
         await users.save()
         return res.status(201).json({message: "Usuário cadastrado com sucesso!"})
     },
@@ -33,10 +32,9 @@ module.exports = {
     async editUsers(req, res) {
         const {_id, name, birthday, email, password} = req.body
         const users = await Users.findOne({_id})
-        const ptBrDateFormat = req.body.birthday.split('-').reverse().join('/')
         
         users.name = name
-        users.birthday = ptBrDateFormat
+        users.birthday = birthday
         users.email = email
         
         if(users.password !== req.body.password && req.body.password !== "") {
