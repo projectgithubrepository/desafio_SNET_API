@@ -17,7 +17,7 @@ Para **executar** a API é necessário utilizar o comando:
 npm run dev 
 ```
 
-Aplicação será executada na porta 5000.
+Aplicação será executada na porta declarada em seu arquivo .env.
 # 
 ## Protocolo dos Endpoints da API 
 
