@@ -27,20 +27,7 @@ module.exports = {
     async deleteUsers(req, res) {
         const {_id} = req.body
         const deleteUser = await Users.deleteOne({_id})
-            
-        //     , (err) => {
-        //     //Retornar erro quando não conseguir apagar no banco de dados
-        //     if(err) return res.status(400).json({
-        //         error: true,
-        //         message: "Erro: Usuário não foi apagado!"
-        //     });
-    
-        //     //Retornar mensagem de sucesso quando excluir o registro com sucesso no banco de dados
-        //     return res.json({
-        //         error: false,
-        //         message: "Usuário apagado com sucesso!"
-        //     });
-        // })
+        return res.status(200).json({message: "Usuário deletado com sucesso!"})    
     },
 
     async editUsers(req, res) {
