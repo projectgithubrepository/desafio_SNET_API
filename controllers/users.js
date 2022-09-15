@@ -1,6 +1,5 @@
 const Users = require('../models/users')
 const { v4: uuid } = require("uuid")
-const bcrypt = require('bcrypt')
 const md5 = require('md5')
 
 module.exports = {
