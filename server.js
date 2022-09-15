@@ -12,7 +12,7 @@ app.use(cors())
 
 app.use(routes)
 
-app.listen(5000, ()=> {
+app.listen(process.env.PORT, ()=> {
     console.log("It's working!!")
 }) 
 
