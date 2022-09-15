@@ -21,7 +21,7 @@ module.exports = {
             res.send(usersByName)
         }
 
-        res.status(200).json(users)
+        return res.status(200).json(users)
     },
 
     async deleteUsers(req, res) {
