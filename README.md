@@ -11,7 +11,11 @@ Dependências utilizadas no projeto:
 - mongoose
 - uuid
 - md5
-# 
+#
+Para **instalar** as dependências do projeto é necessário utilizar o comando:
+``` 
+npm i
+``` 
 Para **executar** a API é necessário utilizar o comando:
 ``` 
 npm run dev 
