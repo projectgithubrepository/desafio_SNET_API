@@ -19,9 +19,9 @@ module.exports = {
         if (name) {
             const usersByName = users.filter((user) => user.name.toUpperCase().includes(name.toUpperCase()))
             res.send(usersByName)
+        } else {
+           return res.status(200).json(users) 
         }
-
-        return res.status(200).json(users)
     },
 
     async deleteUsers(req, res) {
