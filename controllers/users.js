@@ -6,7 +6,8 @@ module.exports = {
     async registerUsers(req, res) {
         const {name, birthday, email, password} = req.body
         const hashedPassword = md5(req.body.password)
-        const users = new Users({_id:uuid(), name, birthday, email, password: hashedPassword})
+        const ptBrDateFormat = req.body.birthday.split('/').reverse().join('/')
+        const users = new Users({_id:uuid(), name, birthday:ptBrDateFormat, email, password: hashedPassword})
         await users.save()
         return res.status(201).json({message: "Usuário cadastrado com sucesso!"})
     },
